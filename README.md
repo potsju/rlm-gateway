@@ -76,9 +76,7 @@ All three strategies run end-to-end and have each produced correct predictions o
 real cases. `run_case_direct` has been batch-tested informally with encouraging
 results; `run_case_logs` (real RLM + tool-calling on log data, run on a free local
 qwen2.5-14b via Ollama) is implemented and correct on the cases tested, but has
-**not** been run over a large enough batch yet to report a statistically
-meaningful accuracy number -- that's the natural next step for anyone picking
-this up.
+**not** been run over a large enough batch yet.
 
 Along the way, several real upstream/rlms library issues were found and worked
 around by reading the actual library source rather than guessing:
@@ -86,6 +84,6 @@ around by reading the actual library source rather than guessing:
 - Only ` ```repl ` fenced blocks are executed; ` ```python ` blocks are silently
   ignored with no error feedback to the model
 - `compaction` defaults to `False`, so the full uncompressed conversation history
-  gets resent every turn -- causing severe iteration slowdown on longer runs
+  gets resent every turn 
 - The REPL is not a Jupyter cell: a bare expression on the last line produces no
   visible output, only `print(...)` does
