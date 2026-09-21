@@ -70,10 +70,10 @@ All three strategies run end-to-end and have each produced correct predictions o
 real cases. `run_case_direct` has been batch-tested informally with encouraging
 results; `run_case_logs` (real RLM + tool-calling on log data, run on a free local
 qwen2.5-14b via Ollama) is implemented and correct on the cases tested, but has
-**not** been run over a large enough batch yet.
+not been run over a large enough batch yet.
 
 Along the way, several real upstream/rlms library issues were found and worked
-around by reading the actual library source rather than guessing:
+around by reading the actual library source:
 - `AnthropicClient` crashes on extended-thinking responses (`_rlm_compat.py`)
 - Only ` ```repl ` fenced blocks are executed; ` ```python ` blocks are silently
   ignored with no error feedback to the model
