@@ -41,10 +41,8 @@ application logs.
 
 ## Backends
 
-Any strategy takes `backend=`: `anthropic`, `openai`, `openrouter` (50 free
-requests/day, no card required), or `local` (free, via [Ollama](https://ollama.com)
-running an open-weight model like `qwen2.5:14b` -- see the Colab notebooks for a
-zero-cost GPU setup).
+Any strategy takes `backend=`: `anthropic`, `openai`, `openrouter`, or `local` (free, via [Ollama](https://ollama.com)
+running an open-weight model like `qwen2.5:14b` 
 
 ## Setup
 
@@ -65,10 +63,6 @@ uv run scripts/eval.py --strategy direct --backend local --limit 10
 uv run scripts/eval.py --strategy logs --backend local --pattern 're2*' --limit 10
 ```
 
-No local GPU? `colab_local_eval.ipynb` runs the same pipeline for free on Colab's
-T4 GPU via Ollama -- no API key needed. `colab_openrouter_eval.ipynb` is the
-same idea via OpenRouter's free tier instead, if you don't want to deal with GPU
-setup at all.
 
 ## Status
 
